@@ -61,7 +61,7 @@
 			<member name="angle" id="5" type="float"/>
 		</struct>
 		<struct name="SampleType" extensibility="extensible">
-			<member name="message" stringMaxLength="640" id="0" type="string" key="true"/>
+			<member name="Message" stringMaxLength="640" id="0" type="string" key="false"/>
 		</struct>
     </types>
 
@@ -76,16 +76,16 @@
 
     <!-- Participant library -->
     <domain_participant_library name="MyParticipantLibrary">
-      <domain_participant name="Zero" domain_ref="MyDomainLibrary::MyDomain">
+      	<domain_participant name="Zero" domain_ref="MyDomainLibrary::MyDomain">
 
-        <publisher name="MyPublisher">
+        <!-- <publisher name="MyPublisher">
 				  <data_writer name="MySampleWriter" topic_ref="SampleTopic" />
-        </publisher>
+        </publisher> -->
 
-        <subscriber name="MySubscriber">
-          <data_reader name="MySampleReader" topic_ref="SampleTopic" />
-        </subscriber>
+			<subscriber name="MySubscriber">
+				<data_reader name="MySampleReader" topic_ref="SampleTopic" />
+			</subscriber>
 
-		  </domain_participant>
+		</domain_participant>
    </domain_participant_library>
 </dds>

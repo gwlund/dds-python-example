@@ -13,7 +13,7 @@ sysPath.append(filepath + "/../rticonnextdds-connector/")
 import rticonnextdds_connector as rti
 
 connector = rti.Connector("MyParticipantLibrary::Zero",
-                          filepath + "\PythonDDSPlayhouse.xml")
+                          filepath + "\\PythonDDSPlayhouse.xml")
 inputDDS = connector.getInput("MySubscriber::MySampleReader")
 
 instanceNumber = '0'
@@ -39,7 +39,7 @@ while running:
         if inputDDS.infos.isValid(j):
             # This gives you a dictionary
             sample = inputDDS.samples.getDictionary(j)
-            message = sample['message']
+            message = sample['Message']
             
             # Or you can just access the field directly
             #size = inputDDS.samples.getNumber(j, "shapesize")
